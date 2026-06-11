@@ -51,7 +51,7 @@ textarea {
 }
 
 .dialog {
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 #file-intro {
@@ -103,7 +103,7 @@ button.showing {
   height: 100%;
   box-sizing: border-box;
   display: none;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 #cues.showing {
