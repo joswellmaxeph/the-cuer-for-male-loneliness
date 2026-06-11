@@ -1,0 +1,172 @@
+body {
+  font-family: "Courier New"
+}
+
+p {
+  margin: 0;
+}
+
+.stage-direction {
+  margin-top: 10px;
+}
+
+.character {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.parenthetical {
+  font-style: italic;
+}
+
+.dialog-line {
+  font-size: 1.2em;
+}
+
+#line {
+  display: none;
+}
+
+#line.revealed {
+  display: flex;
+}
+
+textarea {
+  height: 80%;
+}
+
+.pct-element {
+  background: none;
+  color: black;
+  font-size: 0.9em;
+}
+
+#character-selector input, label {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+#action-section {
+  margin-top: 10px;
+}
+
+.dialog {
+  overflow: scroll;
+}
+
+#file-intro {
+  display: none;
+}
+
+#file-intro.showing {
+  display: block;
+}
+
+#cuer {
+  display: none;
+}
+
+#cuer.showing {
+  display: block;
+}
+
+#character-selector {
+  display: none;
+}
+
+#character-selector.showing {
+  display: block;
+}
+
+button {
+  display: none;
+}
+
+button.showing {
+  display: inline-block;
+}
+
+#line {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.dia-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+#cues {
+  background: lightblue;
+  height: 100%;
+  box-sizing: border-box;
+  display: none;
+  overflow: scroll;
+}
+
+#cues.showing {
+  display: flex;
+}
+
+#line {
+  background: lightgreen;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  text-align: center;
+}
+
+#cuer {
+  width: 500px;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+#top-top {
+  height: 20vh;
+}
+
+#top-box {
+  height: 30vh;
+}
+
+#middle-section {
+  height: 5vh;
+}
+
+#bottom-box {
+  height: 30vh;
+}
+
+#action-section {
+  height: 15vh;
+}
+
+#line .dialog-line span {
+  opacity: 0;
+}
+
+#line .dialog-line span.revealed {
+  opacity: 1;
+}
+
+.diff-result span {
+  color: green;
+  background-color: #e0ffe0;
+}
+
+.diff-result span.added {
+  color: red;
+  background-color: #ffe0e0;
+  text-decoration: line-through;
+}
+
+.diff-result span.removed {
+  color: blue;
+  background-color: #e0e0ff;
+  font-style: italic;
+}
