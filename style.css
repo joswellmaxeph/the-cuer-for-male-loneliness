@@ -170,3 +170,10 @@ body {
   background-color: #e0e0ff;
   font-style: italic;
 }
+
+button {
+    padding: 5px;
+    background: black;
+    color: white;
+    border: 1px solid gray;
+}
