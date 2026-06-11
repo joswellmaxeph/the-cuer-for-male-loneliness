@@ -51,7 +51,7 @@ textarea {
 }
 
 .dialog {
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #file-intro {
@@ -103,7 +103,7 @@ button.showing {
   height: 100%;
   box-sizing: border-box;
   display: none;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #cues.showing {
@@ -152,6 +152,11 @@ body {
 
 #line .dialog-line span.revealed {
   opacity: 1;
+}
+
+.diff-result {
+  overflow-y: auto;
+  height: 100%;
 }
 
 .diff-result span {
