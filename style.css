@@ -181,13 +181,14 @@ body {
 }
 
 button {
-    background: black;
+    background: #000022;
     color: white;
     border: 1px solid gray;
     font-size: 1.2em;
     height: 50px;
     margin: 1px;
     box-sizing: border-box;
+  touch-action: manipulation;
 
 }
 
