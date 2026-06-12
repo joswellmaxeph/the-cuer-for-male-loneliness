@@ -1,6 +1,9 @@
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
     <title>Cuer</title>
     <link rel="stylesheet" href="style.css" />
     <script
@@ -29,47 +32,54 @@
       <button id="submit-characters">Submit</button>
     </div>
     <div id="cuer">
-      <div id="top-top">
-        <h1>Cuer</h1>
-        <p>Character(s): <b id="character-names"></b></p>
-        <br />
-        <p>Scene: <b id="current-scene"></b></p>
-      </div>
-      <div id="top-box">
-        <div id="cues" class="dia-box"></div>
-      </div>
-      <div id="middle-section"></div>
-      <div id="bottom-box">
-        <div id="line" class="dia-box"></div>
+      <div class="topish">
+        <div id="top-top">
+          <h1>Cuer</h1>
+          <p>Character(s): <b id="character-names"></b></p>
+          <p>Scene: <b id="current-scene"></b></p>
+        </div>
+        <div id="top-box">
+          <div id="cues" class="dia-box"></div>
+        </div>
+        <div id="middle-section"></div>
+        <div id="bottom-box">
+          <div id="line" class="dia-box"></div>
+        </div>
       </div>
       <div id="action-section">
+        <div id="top-action">
+        <button onclick="guessLine()" id="guess-btn">Guess</button>
+        <button onclick="revealDialog()" id="reveal-line-btn">
+          Reveal Line
+        </button>
+        <button onclick="revealWord()" id="reveal-word-btn">Reveal Word</button>
+
+        <button id="next-btn" onclick="next()" class="showing">Next</button>
+</div>
+<div id="btm-action">
+        <button onclick="prevScene()" id="skip-back-btn"><<</button>
         <button onclick="prevCue()" id="prev-btn"><</button>
-          <button onclick="guessLine()" id="guess-btn">Guess</button>
-          <button onclick="revealDialog()" id="reveal-line-btn">
-            Reveal Line
-          </button>
-          <button onclick="revealWord()" id="reveal-word-btn">
-            Reveal Word
-          </button>
-          
-        <button id="next-btn" onclick="next()" class="showing">
-          Next
-        </button>
-        
-        <button id="forward-button" onclick="next()">
-          >
-        </button>
+        <button onclick="randomCue()" id="random-btn">🎲</button>
+        <button id="forward-button" onclick="next()">></button>
+        <button id="skip-frwd-button" onclick="nextScene()">>></button>
+        </div>
       </div>
 
       <div id="bottom-bottom">
         <div>
-          <button id="clear-script" class="showing" onclick="clearScript()">Clear Script</button>
-          <button id="clear-characters" class="showing" onclick="clearCharacterSelections()">
+          <button id="clear-script" class="showing" onclick="clearScript()">
+            Clear Script
+          </button>
+          <button
+            id="clear-characters"
+            class="showing"
+            onclick="clearCharacterSelections()"
+          >
             Clear Character Selections
           </button>
         </div>
       </div>
-      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

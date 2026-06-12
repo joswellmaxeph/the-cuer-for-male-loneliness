@@ -15,6 +15,61 @@ function prevCue() {
   next();
 }
 
+function randomCue() {
+  currentCue = Math.floor(Math.random() * cuePracticeLines.length);
+  next();
+}
+
+function nextScene() {
+  const currentSceneNum = cuePracticeLines[currentCue].sceneNumber;
+  for (let i = currentCue+1; i < cuePracticeLines.length; i++) {
+    const searchSceneNum = cuePracticeLines[i].sceneNumber;
+    if (searchSceneNum > currentSceneNum) {
+      currentCue = i-1;
+      next();
+      return;
+    }
+  }
+
+  currentCue = -1;
+  next();
+}
+
+function sceneTopCues() {
+  const sceneTopCues = [];
+  let currentSceneNum = -1;
+  for (let i = 0; i < cuePracticeLines.length; i++) {
+    const thisSceneNum = cuePracticeLines[i].sceneNumber;
+    if (thisSceneNum !== currentSceneNum) {
+      sceneTopCues.push(i);
+      currentSceneNum = thisSceneNum;
+    }
+  }
+
+  return sceneTopCues;
+}
+
+function prevScene() {
+  const sceneTops = sceneTopCues();
+  if (currentCue === 0) {
+    currentCue = sceneTops[sceneTops.length - 1]-1;
+    next();
+    return;
+  }
+
+  let skipBackCue = 0;
+  for (let i = 0; i < sceneTops.length; i++) {
+    if (sceneTops[i] < currentCue) {
+      skipBackCue = sceneTops[i];
+    } else {
+      break;
+    }
+  }
+
+  currentCue = skipBackCue-1;
+  next();
+}
+
 const characters = [];
 const cuePracticeLines = [];
 let currentCue = -1;
@@ -217,8 +272,7 @@ function guessLine() {
   const revealWordButton = document.querySelector("#reveal-word-btn");
   revealWordButton.classList.remove("showing");
   
-  document.getElementById("forward-button").classList.remove("showing");
-  document.getElementById("prev-btn").classList.remove("showing");
+  document.querySelectorAll("#btm-action button").forEach(btn => btn.classList.remove("showing"));
   submitButton.onclick = () => {
     const currentLine = cuePracticeLines[currentCue].line.textLine.trim().toLowerCase();
     const userGuess = input.value.trim().toLowerCase();
@@ -282,8 +336,7 @@ function next() {
   document.getElementById("guess-btn").classList.add("showing");
   document.getElementById("line").classList.remove("revealed");
   document.getElementById("middle-section").innerHTML = "";
-  document.getElementById("forward-button").classList.add("showing");
-  document.getElementById("prev-btn").classList.add("showing");
+  document.querySelectorAll("#btm-action button").forEach(btn => btn.classList.add("showing"));
 }
 
 function revealDialog() {
@@ -293,8 +346,7 @@ function revealDialog() {
   document.getElementById("next-btn").classList.add("showing");
   document.getElementById("reveal-line-btn").classList.remove("showing");
   document.getElementById("reveal-word-btn").classList.remove("showing");
-  document.getElementById("forward-button").classList.remove("showing");
-  document.getElementById("prev-btn").classList.remove("showing");
+  document.querySelectorAll("#btm-action button").forEach(btn => btn.classList.remove("showing"));
   document.getElementById("guess-btn").classList.remove("showing");
 }
 

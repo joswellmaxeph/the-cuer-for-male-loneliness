@@ -8,11 +8,12 @@ p {
 
 .stage-direction {
   margin-top: 10px;
+  font-size: .9em;
 }
 
 .character {
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .parenthetical {
@@ -20,7 +21,7 @@ p {
 }
 
 .dialog-line {
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 #line {
@@ -100,7 +101,7 @@ button.showing {
 
 #cues {
   background: lightblue;
-  height: 100%;
+  /* height: 100%; */
   box-sizing: border-box;
   display: none;
   overflow-y: auto;
@@ -113,7 +114,7 @@ button.showing {
 #line {
   background: lightgreen;
   box-sizing: border-box;
-  height: 100%;
+  /* height: 100%; */
 }
 
 body {
@@ -126,24 +127,26 @@ body {
   margin: 0 auto;
 }
 
-#top-top {
-  height: 20vh;
+.topish {
+  height: 70vh;
+  overflow-y: auto;
 }
 
 #top-box {
-  height: 30vh;
+  max-height: 25vh;
+  overflow-y: auto;
 }
 
 #middle-section {
-  height: 5vh;
+  max-height: 20vh;
 }
 
 #bottom-box {
-  height: 30vh;
+  min-height: 20vh;
 }
 
 #action-section {
-  height: 15vh;
+  height: 30vh;
 }
 
 #line .dialog-line span {
@@ -156,7 +159,8 @@ body {
 
 .diff-result {
   overflow-y: auto;
-  height: 100%;
+  max-height: 18vh;
+  margin-top: 10px;
 }
 
 .diff-result span {
@@ -177,8 +181,50 @@ body {
 }
 
 button {
-    padding: 5px;
     background: black;
     color: white;
     border: 1px solid gray;
+    font-size: 1.2em;
+    height: 50px;
+    margin: 1px;
+    box-sizing: border-box;
+
+}
+
+#bottom-bottom {
+  margin-top: 10vh;
+}
+
+#bottom-bottom button {
+    width: 100%;
+}
+
+h1 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#top-action {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+
+#top-action button {
+  flex: 1;
+  height: 59px;
+}
+
+#btm-action {
+  margin-top: 2px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#btm-action button {
+  flex: 1;
+  background: lightgray;
+  color: black;
+  height: 30px;
+  
 }
