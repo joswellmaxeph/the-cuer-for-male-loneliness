@@ -222,6 +222,10 @@ function sanitizeTextForDiff(text) {
       newText += char.toUpperCase();
     } else if (/\s/.test(char)) {
       newText += " ";
+    } else if (/[.,!?;:()"]/.test(char)) {
+      if (i > 0 && /[a-zA-Z]/.test(text[i-1]) && i < text.length - 1 && /[a-zA-Z]/.test(text[i+1])) {
+        newText += " ";
+      }
     }
   }
 
